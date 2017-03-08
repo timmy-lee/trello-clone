@@ -1,4 +1,4 @@
-Hello and welcome to a project that I have built as an assignment for [Launch School - an online school for developers](https://launchschool.com). [Check out the live version here!]
+Hello and welcome to a project that I have built as an assignment for [Launch School - an online school for developers](https://launchschool.com). [Check out the live version here!](https://trello-board-clone-timlee92.herokuapp.com/)
 
 This is my attempt at the recreation of a single board, from scratch, of the single page application Trello using HTML, CSS, JavaScript, jQuery, Backbone, and Handlebars, with ExpressJS to handle the simple back-end.
 
