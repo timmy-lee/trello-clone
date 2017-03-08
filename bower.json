@@ -1,0 +1,22 @@
+{
+  "name": "trello-board-clone",
+  "description": "Trello Board Clone for front-end development final",
+  "main": "",
+  "authors": [
+    "tim-lee92 <tim-lee92@hotmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "backbone": "^1.3.3",
+    "handlebars": "^4.0.5"
+  }
+}

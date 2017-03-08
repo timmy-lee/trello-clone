@@ -1,0 +1,51 @@
+doctype html
+html
+  head
+    title Trello
+    link(rel='stylesheet', href='/stylesheets/trello.css')
+    script(src="/javascripts/vendor/all.js")
+    script(src="/javascripts/vendor/jquery-ui.min.js")
+    script(src="/javascripts/handlebars_templates.js")
+  body
+    header
+      div(id="search")
+        span.board Boards
+        input(type="text")
+        img.search(src="../images/search-15-16.png")
+        div(id="search_results")
+          p Search Results...
+          ul
+      a(href="#" class="logo")
+      div(id="user_preferences")
+        img.avatar(src="../images/emoticon-24.png")
+        span.name Timmy Lee 
+        img(class="bell" src="../images/bell-2-16.png")
+        ul.notifications
+    main
+      div(id="board_summary")
+        span.board_name Example Board
+        img(src="../images/star-4-16.png")
+        span.private Private
+      div(class="board_details")
+        ul.list
+      div(id="overlay")
+      div(id="details")
+
+      script(src="/javascripts/app.js")
+      script(src="/javascripts/models/card.js")
+      script(src="/javascripts/models/list.js")
+      script(src="/javascripts/models/notification.js")
+      script(src="/javascripts/collections/cards.js")
+      script(src="/javascripts/collections/lists.js")
+      script(src="/javascripts/collections/notifications.js")
+      script(src="/javascripts/views/cards.js")
+      script(src="/javascripts/views/lists.js")
+      script(src="/javascripts/views/card_detail.js")
+      script(src="/javascripts/views/search.js")
+      script(src="/javascripts/views/quickedit.js")
+      script(src="/javascripts/views/notifications.js")
+      script(type="text/javascript").
+        App.cards = new Cards(!{JSON.stringify(cards)});
+        App.lists = new Lists(!{JSON.stringify(lists)});
+        App.notifications = new Notifications(!{JSON.stringify(notifications)});
+        App.init();

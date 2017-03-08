@@ -1,0 +1,156 @@
+<div id="quickedit" data-id="{{id}}">
+  <div id="with_button">
+    <div id="card_info">
+      {{#if labels}}
+        <div class="mini_labels">
+          {{#each labels}}
+            <span class="label" style="background:{{color}}"></span> 
+          {{/each}}
+        </div>
+      {{/if}}
+      <textarea rows="3">{{name}}</textarea>
+      <div class="quicklook">
+        <ul class="quicklook">
+        {{#if subscribed}}
+          <li class="due_date" title="You are subscribed"><img src="../images/eye-16.png" /></li>
+        {{/if}}
+        {{#if due}}
+          <li class="due_date" title="This card has a due date"><img src="../images/clock-16.png" /></li>
+        {{/if}}
+        {{#if description}}
+          <li class="description" title="This card has a description."><img src="../images/list-view-16.png" /></li>
+        {{/if}}
+        {{#if comments}}
+          <li class="comments" title="Comments"><img src="../images/speech-bubble-16.png"/><span>{{comments.length}}</span></li>
+        {{/if}}
+        </ul>
+      </div>
+    </div>
+    <input type="button" value="Save" />
+  </div>
+
+  <div id="quickedit_actions">
+    <ul>
+      <li class="edit_labels"><img src="../images/edit-white-16.png" /><span>Edit Labels</span></li>
+      <li class="move"><img src="../images/arrow-right-white.png" /><span>Move</span></li>
+      <li class="copy"><img src="../images/copy-white-16.png" /><span>Copy</span></li>
+      <li class="due"><img src="../images/time-8-16.png" /><span>Change Due Date</span></li>
+      <li class="archive"><img src="../images/filled-box-white-16.png" /><span>Archive</span></li>
+    </ul>
+  </div>
+
+  <div id="label_popup">
+    <p>Labels <img class="close" src="../images/x-icon.png" /></p>
+    <div class="label red">
+      <span style="background:red" data-color="red"></span>
+    </div>
+    <div class="label orange">
+      <span style="background:orange" data-color="orange"></span>
+    </div>
+    <div class="label yellow">
+      <span style="background:yellow" data-color="yellow"></span>
+    </div>
+    <div class="label green">
+      <span style="background:green" data-color="green"></span>
+    </div>
+    <div class="label blue">
+      <span style="background:blue" data-color="blue"></span>
+    </div>
+    <div class="label purple">
+      <span style="background:purple" data-color="purple"></span>
+    </div>
+  </div>
+
+  <div id="date_popup">
+    <p>Change Due Date <img class="close" src="../images/x-icon.png" /></p>
+    <h3 id="error">You have selected an invalid day</h3>
+    <form>
+      <select id="month">
+        <option value="Month" selected="selected" disabled>Month</option>
+        <option value="Jan">Jan</option>
+        <option value="Feb">Feb</option>
+        <option value="Mar">Mar</option>
+        <option value="Apr">Apr</option>
+        <option value="May">May</option>
+        <option value="Jun">Jun</option>
+        <option value="Jul">Jul</option>
+        <option value="Aug">Aug</option>
+        <option value="Sep">Sep</option>
+        <option value="Oct">Oct</option>
+        <option value="Nov">Nov</option>
+        <option value="Dec">Dec</option>
+      </select>
+      <select id="day">
+        <option value="Day" selected="selected" disabled>Day</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+        <option value="21">21</option>
+        <option value="22">22</option>
+        <option value="23">23</option>
+        <option value="24">24</option>
+        <option value="25">25</option>
+        <option value="26">26</option>
+        <option value="27">27</option>
+        <option value="28">28</option>
+        <option value="29">29</option>
+        <option value="30">30</option>
+        <option value="31">31</option>
+      </select>
+      <input type="time" id="time" />
+      <div id="buttons">
+        <input type="submit" value="Save" />
+        <input type="button" value="Remove" />
+      </div>
+    </form>
+  </div>
+
+  <div id="move_card_popup">
+    <p>Move Card <img class="close" src="../images/x-icon.png" /></p>
+    <div class="label_for_select "><span>List</span>
+      <select id="lists_of_lists">
+      </select>
+    </div>
+    <div class="label_for_select pos"><span>Position</span>
+      <select id="card_positions">
+      </select>
+    </div>
+
+    <input type="button" value="Move" />
+  </div>
+
+  <div id="copy_card_popup">
+    <p>Copy card <img class="close" src="../images/x-icon.png" /></p>
+    <div id="copy_card_name">
+      <h4>Title</h4>
+      <textarea rows="3">{{name}}</textarea>
+    </div>
+    <div class="label_for_select"><span>List</span>
+      <select id="lists_of_lists_for_copy">
+      </select>
+    </div>
+    <div class="label_for_select pos"><span>Position</span>
+      <select id="card_positions_for_copy">
+      </select>
+    </div>
+
+    <input type="button" value="Copy" />
+  </div>
+</div>

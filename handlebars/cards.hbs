@@ -1,0 +1,29 @@
+{{#each card}}
+  <li class="card" data-id="{{id}}">
+    <img class="quickedit" src="../images/pencil-2-16.png" />
+    {{#if labels}}
+      <div class="mini_labels">
+        {{#each labels}}
+          <span class="label" style="background:{{color}}"></span> 
+        {{/each}}
+      </div>
+    {{/if}}
+    <a href="#">{{name}}</a>
+    <div class="quicklook">
+      <ul class="quicklook">
+      {{#if subscribed}}
+        <li class="due_date" title="You are subscribed"><img src="../images/eye-16.png" /></li>
+      {{/if}}
+      {{#if due}}
+        <li class="due_date" title="This card has a due date"><img src="../images/clock-16.png" /></li>
+      {{/if}}
+      {{#if description}}
+        <li class="description" title="This card has a description."><img src="../images/list-view-16.png" /></li>
+      {{/if}}
+      {{#if comments}}
+        <li class="comments" title="Comments"><img src="../images/speech-bubble-16.png"/><span>{{comments.length}}</span></li>
+      {{/if}}
+      </ul>
+    </div>
+  </li>
+{{/each}}

@@ -1,0 +1,81 @@
+{{#each list}}
+  <li class="list sort" data-id={{id}}>
+    <div class="heading_wrapper">
+      <p data-id="{{id}}" class="title">{{name}}</p>
+      <input class="edit_name_field" type="text" value="{{name}}" />
+      <div class="list_icons">
+      {{#if subscribed}}
+        <img src="../images/eye-16.png" />
+      {{/if}}
+      <span>&#183;&#183;&#183;</span>
+      </div>
+    </div>
+    <ul class="card" data-id="{{id}}">
+    </ul>
+    <div class="add_card">Add a card...</div>
+    <div class="add">
+      <form class="add_card" data-id="{{id}}">
+        <fieldset>
+          <textarea class="add_card" rows="3"></textarea>
+          <input type="submit" value="Add" />
+          <img class="close" src="../images/x-icon.png" />
+        </fieldset>
+      </form>
+    </div>
+  </li>
+{{/each}}
+<li class="list show_add_list_form">Add a list...</li>
+<li class="form">
+  <form action="/" class="new_list">
+    <fieldset>
+      <input id="add_list_form" type="text" placeholder="Add a list..." />
+      <input type="submit" value="Add" />
+    </fieldset>
+  </form>
+</li>
+
+<div id="list_action_popup">
+  <p> List Actions <img class="close" src="../images/x-icon.png" /></p>
+  <ul class="list_actions">
+    <li class="add_card">Add Card...</li>
+    <li class="copy_list">Copy List...</li>
+    <li class="move_list">Move List...</li>
+    <li class="subscribe">Subscribe...</li>
+  </ul>
+  <ul class="card_actions">
+    <li class="move_cards_from_list">Move all cards in this list...</li>
+    <li class="archive_cards_from_list">Archive all cards in this list...</li>
+  </ul>
+  <ul>
+    <li class="archive_list">Archive this list</li>
+  </ul>
+</div>
+
+<div id="move_all_cards_popup">
+  <p> Move All Cards in List<img class="close" src="../images/x-icon.png" /></p>
+  <ul class="list_of_lists">
+    {{#each list}}
+      <li data-id="{{id}}">{{name}}</li>
+    {{/each}}
+  </ul>
+</div>
+
+<div id="move_list_popup">
+  <p>Move List <img class="close" src="../images/x-icon.png" /></p>
+  <div class="label_for_select"><span>Position</span>
+    <select id="list_positions">
+    </select>
+  </div>
+  <input type="button" value="Move" />
+</div>
+
+<div id="copy_list_popup">
+  <p>Copy List <img class="close" src="../images/x-icon.png" /></p>
+  <form>
+    <fieldset>
+      <h4>Name</h4>
+      <textarea rows="3"></textarea>
+      <input type="submit" value="Create List" />
+    </fieldset>
+  </form>
+</div>

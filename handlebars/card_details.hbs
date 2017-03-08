@@ -1,0 +1,197 @@
+<div id="card_details" data-id="{{id}}">
+  <div id="header">
+    <img src="../images/show-property-24.png" />
+    <textarea rows="1">{{name}}</textarea> <img class="close" src="../images/x-icon.png" />
+    <p>in list <a href="#">{{listName}}</a> 
+    {{#if subscribed}}
+      <img class="subscribed" src="../images/eye-16.png" />
+    {{/if}}
+  </div>
+
+  <div id="main_bar">
+    {{#if labels}}
+      <div id="card_labels">
+        <p>Labels</p>
+        {{#each labels}}
+          <span class="label" style="background:{{color}}">{{color}}</span>
+        {{/each}}
+      </div>
+    {{/if}}
+    {{#if due}}
+      <div id="due_date">
+        <p>Due Date</p>
+        <p>{{due}}</p>
+      </div>
+    {{/if}}
+    <div id="card_description">
+      {{#if description}}
+        <a href="#">Edit the description</a>
+      {{else}}
+        <a href="#">Add a description</a>
+      {{/if}}
+      <p>{{description}}</p>
+      <form>
+        <textarea rows="5">{{description}}</textarea>
+        <input type="submit" value="Save">
+        <img class="close" src="../images/x-icon.png" />
+      </form>
+    </div>
+    <div id="comments">
+      <img src="../images/comments-24.png" />
+      <h2>Add Comment</h2>
+      <form>
+        <img src="../images/emoticon-24.png" />
+        <div id="comment_box">
+          <textarea rows="1" placeholder="Write a comment..."></textarea>
+          <div id="comment_icons">
+            <ul>
+              <li><img src="../images/paper-clip-2-16.png" title="Attach a file"/></li>
+              <li><img src="../images/at-3-16.png" title="Mention a member" /></li>
+              <li><img src="../images/emoticon-30-16.png" title="Add emoji" /></li>
+              <li><img src="../images/show-property-24.png" title="Add card" /></li>
+            </ul>
+          </div>
+        </div>
+        <input type="submit" value="Send" />
+      </form>
+    </div>
+
+    <div id="activity">
+      <img src="../images/activity-feed-24.png" />
+      <h2>Activity</h2>
+      {{#each activity}}
+        <p>{{activity}}</p>
+      {{/each}}
+    </div>
+
+      <div id="posted_comments">
+        {{#each comments}}
+          <img src="../images/emoticon-24.png" />
+          <h3>{{commenter}}</h3>
+          <div class="comment_body">
+            <p>{{comment}}</p>
+          </div>
+          <div class="comment_details">
+            <span>{{time}}</span>
+          </div>
+        {{/each}}
+      </div>
+  </div>
+
+  <div id="sidebar">
+    <h2>Add</h2>
+    <ul class="add">
+      <li class="labels"><span>x</span> <a href="#">Labels</a></li>
+      <li class="due"><span>x</span> <a href="#">Due Date</a></li>
+    </ul>
+    <h2>Actions</h2>
+    <ul class="actions">
+      <li class="move"><span>>x</span> <a href="#">Move</a>
+      </li>
+      <li class="copy"><span>x</span> <a href="#">Copy</a></li>
+      <li class="subscribe"><span>x</span> <a href="#">Subscribe</a></li>
+      <li class="archive"><span>x</span> <a href="#">Archive</a></li>
+    </ul>
+  </div>
+
+  <div id="label_popup">
+    <p>Labels <img class="close" src="../images/x-icon.png" /></p>
+    <div class="label red">
+      <span style="background:red" data-color="red"></span>
+    </div>
+    <div class="label orange">
+      <span style="background:orange" data-color="orange"></span>
+    </div>
+    <div class="label yellow">
+      <span style="background:yellow" data-color="yellow"></span>
+    </div>
+    <div class="label green">
+      <span style="background:green" data-color="green"></span>
+    </div>
+    <div class="label blue">
+      <span style="background:blue" data-color="blue"></span>
+    </div>
+    <div class="label purple">
+      <span style="background:purple" data-color="purple"></span>
+    </div>
+  </div>
+
+  <div id="date_popup">
+    <p>Change Due Date <img class="close" src="../images/x-icon.png" /></p>
+    <h3 id="error">You have selected an invalid day</h3>
+    <form>
+      <select id="month">
+        <option value="Month" selected="selected" disabled>Month</option>
+        <option value="Jan">Jan</option>
+        <option value="Feb">Feb</option>
+        <option value="Mar">Mar</option>
+        <option value="Apr">Apr</option>
+        <option value="May">May</option>
+        <option value="Jun">Jun</option>
+        <option value="Jul">Jul</option>
+        <option value="Aug">Aug</option>
+        <option value="Sep">Sep</option>
+        <option value="Oct">Oct</option>
+        <option value="Nov">Nov</option>
+        <option value="Dec">Dec</option>
+      </select>
+      <select id="day">
+        <option value="Day" selected="selected" disabled>Day</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+        <option value="21">21</option>
+        <option value="22">22</option>
+        <option value="23">23</option>
+        <option value="24">24</option>
+        <option value="25">25</option>
+        <option value="26">26</option>
+        <option value="27">27</option>
+        <option value="28">28</option>
+        <option value="29">29</option>
+        <option value="30">30</option>
+        <option value="31">31</option>
+      </select>
+      <input type="time" id="time" />
+      <div id="buttons">
+        <input type="submit" value="Save" />
+        <input type="button" value="Remove" />
+      </div>
+    </form>
+  </div>
+
+  <div id="copy_card_popup">
+    <p>Copy card <img class="close" src="../images/x-icon.png" /></p>
+    <div id="copy_card_name">
+      <h4>Title</h4>
+      <textarea rows="3">{{name}}</textarea>
+    </div>
+    <div class="label_for_select"><span>List</span>
+      <select id="lists_of_lists_for_copy">
+      </select>
+    </div>
+    <div class="label_for_select pos"><span>Position</span>
+      <select id="card_positions_for_copy">
+      </select>
+    </div>
+
+    <input type="button" value="Copy" />
+  </div>
+</div>

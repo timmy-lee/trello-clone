@@ -1,0 +1,16 @@
+<div id="move_card_popup">
+  <p>Move Card <img class="close" src="../images/x-icon.png" /></p>
+  <div class="label_for_select "><span>List</span>
+    <select id="lists_of_lists">
+      {{#each listProp}}
+        <option value="{{name}}">{{name}}</option>
+      {{/each}}
+    </select>
+  </div>
+  <div class="label_for_select pos"><span>Position</span>
+    <select id="card_positions">
+    </select>
+  </div>
+
+  <input type="button" value="Move" />
+</div>
